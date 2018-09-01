@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rumor Finder</title>
+<title>チーム灯台(3班)</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/map.css">
+<link rel="stylesheet" href="css/tab.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-<!-- バナー　-->
 <section class="banner" role="banner">
   <header id="header">
     <div class="header-content clearfix">
@@ -21,7 +21,6 @@
         <p><img class="logo_png" src="images/icon.png" alt=""></p>
         <p>システム名</p>
       </a>
-      <!--ナビゲーションバー-->
       <nav class="navigation" role="navigation">
         <ul class="primary-nav">
           <li><a href="#city">市町村</a></li>
@@ -30,8 +29,6 @@
       </nav>
       <a href="#" class="nav-toggle">Menu<span></span></a> </div>
   </header>
-
-<!--市町村別穴場-->
 <section id="city" class="section subscribe">
   <div class="container">
     <div class="row">
@@ -40,14 +37,27 @@
 				<div id="secret_map" style="width:600px; height:400px"></div>
       </div>
 			<div class="col-md-4 col-sm-12 list-box">
-				リスト
+				<div class="spot-list">
+					<ul class="tab clearfix">
+						<li class="active">穴場スポット</li>
+  					<li>有名スポット</li>
+					</ul>
+					<div class="area">
+  				<ul class="show">
+    				<li>海南市</li>
+    				<li>田辺市</li>
+    				<li>紀の川市</li>
+  				</ul>
+  				<ul>
+						<li>和歌山市</li>
+						<li>なんとか市</li>
+						<li>hogehoge市</li>
+					</ul>
+				</div>
 			</div>
     </div>
   </div>
 </section>
-<!--市町村ここまで-->
-
-<!--メッシュ別穴場-->
 <section id="mesh" class="section mesh">
   <div class="container">
     <div class="row">
@@ -65,9 +75,6 @@
     </div>
   </div>
 </section>
-<!--メッシュここまで-->
-
-<!-- footer section-->
 <footer class="section footer">
   <div class="footer-bottom">
     <div class="container">
@@ -82,8 +89,6 @@
     </div>
   </div>
 </footer>
-<!-- footer section-->
-<!-- Include JS files -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.fancybox.pack.js"></script>
@@ -91,5 +96,6 @@
 <script src="js/main.js"></script>
 <script type="text/javascript" charset="utf-8" src="https://map.yahooapis.jp/js/V1/jsapi?appid=dj00aiZpPWh6bTlXckpsTURTVCZzPWNvbnN1bWVyc2VjcmV0Jng9NmU-"></script>
 <script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/tab.js"></script>
 </body>
 </html>

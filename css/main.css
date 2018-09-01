@@ -68,11 +68,11 @@ ul li {
 	list-style: none;
 }
 .section {
-	padding: 70px 0px 100px 0px;
+	padding: 70px 0px 0px 0px;
 }
 
 #city{
-	padding: 140px 0px 100px 0px;
+	padding: 140px 0px 0px 0px;
 }
 
 .list-box-map{
