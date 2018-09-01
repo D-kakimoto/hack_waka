@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/map.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -17,7 +18,7 @@
   <header id="header">
     <div class="header-content clearfix">
       <a class="logo" href="#">
-        <p><img class="logo_png" src="images/rumor_addon.png" alt=""></p>
+        <p><img class="logo_png" src="images/icon.png" alt=""></p>
         <p>システム名</p>
       </a>
       <!--ナビゲーションバー-->
@@ -35,18 +36,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-sm-12 list-box-map">
-        ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
+				<div id="popular_map" style="width:600px; height:400px"></div>
+				<div id="secret_map" style="width:600px; height:400px"></div>
       </div>
 			<div class="col-md-4 col-sm-12 list-box">
-				aaaaa
+				リスト
 			</div>
     </div>
   </div>
@@ -58,20 +52,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center">
-        <h2><span>メッシュ別</span>
+        <h2><span>メッシュ</span>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 col-sm-12 list-box-map">
         ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
-				ここに地図が入る<br>
       </div>
 			<div class="col-md-4 col-sm-12 list-box">
 				aaaaa
@@ -102,8 +88,8 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/owl.carousel.min.js"></script>
-
 <script src="js/main.js"></script>
-<script type="text/javascript" src="js/diff.js">//</script>
+<script type="text/javascript" charset="utf-8" src="https://map.yahooapis.jp/js/V1/jsapi?appid=dj00aiZpPWh6bTlXckpsTURTVCZzPWNvbnN1bWVyc2VjcmV0Jng9NmU-"></script>
+<script type="text/javascript" src="js/map.js"></script>
 </body>
 </html>

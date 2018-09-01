@@ -68,21 +68,19 @@ ul li {
 	list-style: none;
 }
 .section {
-	padding: 50px 0;
+	padding: 70px 0px 100px 0px;
 }
 
 #city{
-	padding: 120px 0px 100px 0px;
+	padding: 140px 0px 100px 0px;
 }
 
 .list-box-map{
 	height:500px;
-	border: solid 3px #000000;
 }
 
 .list-box{
 	height:500px;
-	border: solid 3px #000000;
 }
 
 .no-padding {
@@ -100,7 +98,7 @@ ul li {
 	position: fixed;
 	width: 100%;
 	z-index: 999;
-	background-color: black;
+	background-color:#201f22;
 }
 
 #header .header-content {
