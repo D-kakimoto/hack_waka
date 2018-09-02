@@ -8,7 +8,7 @@ function citycode_get(prefcode){
       url:"https://opendata.resas-portal.go.jp/api/v1/cities?prefCode="+prefcode,
       type: "GET",
       headers: {
-          "X-API-KEY": "aopG1WDpGAaaMtOYfNQ3hiJbpbkWOgcBXVum3Etb"
+          "X-API-KEY": "3Hdy8PnC1g6a0V3HhR2rsoKeLNgZmKh3zi6qomEJ"
       },
       async: "false",
       dataType: "json",
@@ -32,11 +32,12 @@ function diff(citycode,prefcode){
     var result = null;
     var cityname;
     var prefname;
+    var year = "2016";
     $.ajax({
-        url:"https://opendata.resas-portal.go.jp/api/v1/partner/docomo/destination?year=2016&month=01&periodOfDay=1&periodOfTime=14&gender=-&ageRange=-&prefCodeDestination="+prefcode+"&cityCodeDestination="+citycode+"&prefCodeResidence=-&cityCodeResidence=-",
+        url:"https://opendata.resas-portal.go.jp/api/v1/partner/docomo/destination?year="+year+"&month=01&periodOfDay=1&periodOfTime=14&gender=-&ageRange=-&prefCodeDestination="+prefcode+"&cityCodeDestination="+citycode+"&prefCodeResidence=-&cityCodeResidence=-",
         type: "GET",
         headers: {
-            "X-API-KEY": "aopG1WDpGAaaMtOYfNQ3hiJbpbkWOgcBXVum3Etb"
+            "X-API-KEY": "3Hdy8PnC1g6a0V3HhR2rsoKeLNgZmKh3zi6qomEJ"
         },
         async: "false",
         dataType: "json",
@@ -47,6 +48,7 @@ function diff(citycode,prefcode){
             if (data["result"]["prefs"][i]["prefCode"] == prefcode) {
               prefname = data["result"]["prefs"][i]["prefName"];
               for (var v=0;v<100;v++) {
+                if(!data["result"]["prefs"][i]["cities"][v]){continue;}
                 if(data["result"]["prefs"][i]["cities"][v]["cityCode"] == citycode){
                   in_city_num = data["result"]["prefs"][i]["cities"][v]['total'];
                   cityname = data["result"]["prefs"][i]["cities"][v]["cityName"];
@@ -58,9 +60,9 @@ function diff(citycode,prefcode){
               in_pre_num = data["result"]["prefs"][i]["total"];
               kenngai = all_pre_num - in_pre_num;
               kennnai = all_pre_num - in_city_num - kenngai;
-              result = kennnai - kenngai;
+              result = (kennnai - kenngai)/all_pre_num;
               var prefcity = prefname + cityname;
-              //console.log(citycode+","+prefname+cityname+",県外"+kenngai+",県内"+kennnai+",差分"+result);
+              console.log(citycode+","+prefname+cityname+",県外"+kenngai+",県内"+kennnai+",差分"+result);
               var obj = {};
               obj['name'] = prefcity;
               obj['diff'] = result;
@@ -73,7 +75,6 @@ function diff(citycode,prefcode){
         }
     });
 }
-citycode_get(30);
 
 //ajaxが終わったらソート
 $(document).ajaxStop(function() {
@@ -96,3 +97,12 @@ $(document).ajaxStop(function() {
   set_spot(obj);
   console.log(obj);
 });
+
+$("#pref-selecter").change(function(e){
+  var target = $(e.target);
+  cities = [];
+  diff_secpop = [];
+  pre_drow(target[0].value);
+});
+
+pre_drow(30);
